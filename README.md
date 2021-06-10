@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+# Hotel-Database
+Hotel Database Project for the Undergraduate Course "Databases" in the Electrical and Computer Engineering School of the National technical University of Athens. 
+=======
 # ASDF-Hotel-Database
 Hotel Database Project for the Undergraduate "Databases" Course
+>>>>>>> 4f52facd4f5083966c5d768067eab85cc392c40f
 
 #SCENARIO
 
