@@ -2,7 +2,7 @@
 <html>
 <body bgcolor="1c1d26">
 <head>
-    <h1 style="text-align: center; color: white;">Τα Προιόντα μας!</h1>
+    <h1 style="text-align: center; color: white;">Hotel Spaces</h1>
     <link rel="stylesheet" type="text/css" href="button.css">
 </head>
 

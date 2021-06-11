@@ -2,7 +2,7 @@
 <html>
 <body bgcolor="1c1d26">
 <head>
-    <h1 style="text-align: center; color: white;">Τα Προιόντα μας!</h1>
+    <h1 style="text-align: center; color: white;">List of Customers</h1>
     <link rel="stylesheet" type="text/css" href="button.css">
 </head>
 
@@ -10,7 +10,7 @@
 <?php
 include("DBConnection.php");
 
-$sql = "SELECT * from Hotel.Customer";
+$sql = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Customer.id_type, Customer.id_num, Customer.id_auth, Customer.birthdate, Email.email_address FROM Hotel.Customer, Hotel.Email WHERE Hotel.Customer.nfc_id=Hotel.Email.nfc_id";
 $result = mysqli_query($con,$sql);
 
 ?>
@@ -24,7 +24,7 @@ $result = mysqli_query($con,$sql);
         <th style="color:white;">ID Number</th>
         <th style="color:white;">ID Authority</th>
         <th style="color:white;">Birthdate</th>
-
+        <th style="color:white;">Email Address</th>
     </tr>
     <?php
     while($row=mysqli_fetch_assoc($result)){
@@ -37,6 +37,7 @@ $result = mysqli_query($con,$sql);
             <td style="color:white;"><?php echo $row["id_num"]; ?></td>
             <td style="color:white;"><?php echo $row["id_auth"]; ?></td>
             <td style="color:white;"><?php echo $row["birthdate"]; ?></td>
+            <td style="color:white;"><?php echo $row["email_address"]; ?></td>
         </tr>
         <?php
     }
