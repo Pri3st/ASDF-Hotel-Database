@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="button.css">
 </head>
 <a href="queriesgeneral.html" class="button">Back</a>
-<center><h2 style = "color:white;">Αγορές</h2></center>
+<center><h1 style = "color:white;">Services by Type</h1></center>
+<center><h2 style = "color:white;">Please Input the Service Type Code You Wish to Find Information</h2></center>
+<center><h3 style = "color:white;">In this form you can query the ASDF Hotel Database for information regarding the Customers who have used a specific Service. The form input must be valid. For the active service codes corresponding to services offered by the Hotel, please reffer to the following table: </h3></center>
 <form action = "displayservicesbytype.php" method="get">
     <br>
         <center style="color:white;"> Service Type:

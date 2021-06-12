@@ -3,6 +3,7 @@
 <body bgcolor="1c1d26">
 <head>
     <h1 style="text-align: center; color: white;">List of Customers</h1>
+    <h1 style="text-align: center; color: white;">This is a list of all reservations which have been made so far in the Hotel.</h1>
     <link rel="stylesheet" type="text/css" href="button.css">
 </head>
 
