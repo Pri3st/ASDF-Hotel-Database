@@ -14,7 +14,8 @@ An NFC-enabled bracelet is delivered to each customer, which provides the user w
 1) Clone or download the repository.
 2) Start MySQL/MariaDB with the following command: service mysql start
 3) Start Apache2 with the following command: service apache2 start
-4) Import the Database (Hotel.sql) using the following commands:
+4) Credentials for connecting with the database can be found and changed as needed in the DBConnect.php (best practise is to create a new account in mysql/mariadb using the same credentials, and grant it all privileges for the Hotel Database).
+5) Import the Database (Hotel.sql) using the following commands:
      a) mysql -u username -p
      b) CREATE DATABASE Hotel;
      c) mysql -u username -p Hotel < Hotel.sql
@@ -28,10 +29,11 @@ An NFC-enabled bracelet is delivered to each customer, which provides the user w
 1) Clone or download the repository.
 2) Start XAMPP and Start Apache and MySQL from the XAMPP Control Panel
 3) Open phpMyAdmin
-4) Import the Database (Hotel.sql) in phpMyAdmin
-5) Move the hotel_web_app to C:\xampp\htdocs (in case of different installation directory, move the hotel_web_app folder inside the htdocs folder inside XAMPP)
-6) Access the web application by pasting the following path to your Web Browser: http://localhost/hotel_web_app/index.html
-7) Start querying the database.
+4) In phpMyAdmin, create a new Database named Hotel and import the Hotel.sql file in it. 
+5) Credentials for connecting with the database can be found and changed as needed in the DBConnect.php (best practise is to create a new account in phpMyAdmin using the same credentials, and grant it all privileges for the Hotel Database).
+6) Move the hotel_web_app to C:\xampp\htdocs (in case of different installation directory, move the hotel_web_app folder inside the htdocs folder inside XAMPP)
+7) Access the web application by pasting the following path to your Web Browser: http://localhost/hotel_web_app/index.html
+8) Start querying the database.
 
 #Security Warning
 
