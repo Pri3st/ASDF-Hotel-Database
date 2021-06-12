@@ -16,9 +16,9 @@ An NFC-enabled bracelet is delivered to each customer, which provides the user w
 3) Start Apache2 with the following command: service apache2 start
 4) Credentials for connecting with the database can be found and changed as needed in the DBConnect.php (best practise is to create a new account in mysql/mariadb using the same credentials, and grant it all privileges for the Hotel Database).
 5) Import the Database (Hotel.sql) using the following commands:
-     a) mysql -u username -p
-     b) CREATE DATABASE Hotel;
-     c) mysql -u username -p Hotel < Hotel.sql
+     * mysql -u username -p
+     * CREATE DATABASE Hotel;
+     * mysql -u username -p Hotel < Hotel.sql
 3) Move the hotel_web_app to /var/www/html
 4) Paste the following path to your Web Browser so that you can access the web application via Apache2: http://127.0.0.1/hotel_web_app/index.html
 5) Start querying the Database.
