@@ -12,21 +12,36 @@ SELECT DISTINCT Customer.nfc_id, Customer.first_name, Customer.last_name, Custom
 
 4) Find which Customers used a Specific Service (by Service ID) and show information about them, the Service, the Space and their Charging
 
-"SELECT Customer.nfc_id, Customer.first_name, Customer.last_name FROM Customer, Service, Receive WHERE Service.service_id = '$search1' AND Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id";
+SELECT Customer.nfc_id, Customer.first_name, Customer.last_name FROM Customer, Service, Receive WHERE Service.service_id = '$search1' AND Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id;
 
 5) Find which Customers used a Subscription Service of a specific Cost and show Service, the Space, their Charging and Subscription information
 
-"SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Service.service_descr, Charge.charge_time, Charge.charge_descr, Space.space_name, Space.space_descr, Subscribe.subscr_time FROM Customer, Receive, Service, Charge, Provided, Space, Subscription, Subscribe, Access WHERE Customer.nfc_id=Receive.nfc_id AND Service.service_id=Charge.service_id AND Receive.charge_time=Charge.charge_time AND Service.service_id=Provided.service_id AND Provided.space_id=Space.space_id AND Service.service_id=Subscription.subscr_id AND Subscription.subscr_id=Subscribe.subscr_id and Subscribe.nfc_id=Customer.nfc_id AND Customer.nfc_id=Charge.nfc_id AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id AND Charge.Ammount=$search1";
+SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Service.service_descr, Charge.charge_time, Charge.charge_descr, Space.space_name, Space.space_descr, Subscribe.subscr_time FROM Customer, Receive, Service, Charge, Provided, Space, Subscription, Subscribe, Access WHERE Customer.nfc_id=Receive.nfc_id AND Service.service_id=Charge.service_id AND Receive.charge_time=Charge.charge_time AND Service.service_id=Provided.service_id AND Provided.space_id=Space.space_id AND Service.service_id=Subscription.subscr_id AND Subscription.subscr_id=Subscribe.subscr_id and Subscribe.nfc_id=Customer.nfc_id AND Customer.nfc_id=Charge.nfc_id AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id AND Charge.Ammount=$search1;
 
 6) Find which Customers used a Complimentary Service of a specific Cost and show Service, the Space, their Charging and Subscription information
 
-"SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Service.service_descr, Charge.charge_time, Charge.charge_descr, Space.space_name, Space.space_descr FROM Customer, Receive, Service, Charge, Provided, Space, Visit WHERE Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id AND Service.service_id=Charge.service_id AND Receive.charge_time=Charge.charge_time AND Service.service_id=Provided.service_id AND Provided.space_id=Space.space_id AND Customer.nfc_id=Charge.nfc_id AND Customer.nfc_id=Visit.nfc_id AND Visit.space_id=Space.space_id AND Service.service_id IN ('B1', 'B2', 'R1', 'R2', 'R3', 'R4', 'H1', 'H3') AND Charge.Ammount=$search1";
+SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Service.service_descr, Charge.charge_time, Charge.charge_descr, Space.space_name, Space.space_descr FROM Customer, Receive, Service, Charge, Provided, Space, Visit WHERE Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id AND Service.service_id=Charge.service_id AND Receive.charge_time=Charge.charge_time AND Service.service_id=Provided.service_id AND Provided.space_id=Space.space_id AND Customer.nfc_id=Charge.nfc_id AND Customer.nfc_id=Visit.nfc_id AND Visit.space_id=Space.space_id AND Service.service_id IN ('B1', 'B2', 'R1', 'R2', 'R3', 'R4', 'H1', 'H3') AND Charge.Ammount=$search1;
 
 7) Covid-19 Tracking Query - Find Information about the Hotel Spaces a Customer has Visited
 
-"SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Visit.space_id, Visit.entry_time, Visit.exit_time, Space.space_descr FROM Customer, Visit, Space WHERE Customer.nfc_id = '$search1' AND Customer.nfc_id=Visit.nfc_id AND Visit.space_id=Space.space_id";
+SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Visit.space_id, Visit.entry_time, Visit.exit_time, Space.space_descr FROM Customer, Visit, Space WHERE Customer.nfc_id = '$search1' AND Customer.nfc_id=Visit.nfc_id AND Visit.space_id=Space.space_id;
 
 8) Covid-19 Tracking Query - Find Information about the Hotel Spaces a Customer has Access Customers
 
-"SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Access.space_id, Access.start_time, Access.end_time, Space.space_descr FROM Customer, Access, Space WHERE Customer.nfc_id = '$search1' AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id";
+SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Access.space_id, Access.start_time, Access.end_time, Space.space_descr FROM Customer, Access, Space WHERE Customer.nfc_id = '$search1' AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id";
 
+9) Services by Type View
+
+CREATE VIEW ServicesbyTypeView AS SELECT Customer.first_name, Customer.last_name, Customer.nfc_id, Service.service_descr, Service.service_id FROM Customer, Service, Receive WHERE Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id;
+
+10) Services by Type View Query
+
+"SELECT ServicesbyTypeView.nfc_id, ServicesbyTypeView.first_name, ServicesbyTypeView.last_name FROM ServicesbyTypeView WHERE ServicesbyTypeView.service_id='$search1'";
+
+11) Customers Profiles View
+
+CREATE VIEW CustomerView AS SELECT nfc_id, first_name, last_name, id_type, id_num, id_auth, birthdate FROM Customer;
+
+12) Customers Profiles View Query
+
+SELECT * from CustomerView;
