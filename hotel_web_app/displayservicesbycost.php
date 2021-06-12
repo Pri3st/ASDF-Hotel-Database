@@ -28,6 +28,16 @@ $query2 = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Serv
 
 $result1 = mysqli_query($con,$query1);
 $result2 = mysqli_query($con,$query2);
+
+if ($search1 < 0){
+        echo "<div style ='color:white'>Wrong Input</div>";
+}
+else if(!$result1 || mysqli_num_rows($result1)==0) {
+        echo "<div style ='color:white'>No results were found</div>";
+}
+else
+{
+echo "<div style ='color:white'>The following results were found:</div>";
 ?>
 
 <br>
@@ -88,8 +98,9 @@ $result2 = mysqli_query($con,$query2);
             <td style="color:white;"><?php echo $row["space_descr"]; ?></td>
         </tr>
         <?php
-    }
-    ?>
+        }
+}
+?>
 </body>
 </html>
 
