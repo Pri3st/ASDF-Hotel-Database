@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body bgcolor="1c1d26">
+    <a href="index.html" class="button">Back</a>
 <head>
     <h1 style="text-align: center; color: white;">List of Customers</h1>
     <h1 style="text-align: center; color: white;">This is a list of all reservations which have been made so far in the Hotel.</h1>

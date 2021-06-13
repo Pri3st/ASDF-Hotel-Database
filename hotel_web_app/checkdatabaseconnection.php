@@ -1,3 +1,5 @@
+<a href="index.html" class="button">Back</a>
+
 <?php
 //Establishing connection with the database
 $servername = "localhost";
@@ -14,4 +16,3 @@ if (!$con){
 //echo "Connected succesfully!";
 
 ?>
-<br>
