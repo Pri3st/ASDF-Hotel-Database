@@ -11,7 +11,7 @@
 <?php
 include("DBConnection.php");
 
-$sql = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Customer.id_type, Customer.id_num, Customer.id_auth, Customer.birthdate, Space.space_id, Space.bed_count, Access.start_time, Access.end_time, Charge.ammount FROM Hotel.Customer, Hotel.Space, Hotel.Access, Hotel.Charge WHERE Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id AND Customer.nfc_id=Charge.nfc_id AND Space.bed_count>0 AND Charge.service_id LIKE 'Rm%'";
+$sql = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Customer.id_type, Customer.id_num, Customer.id_auth, Customer.birthdate, Space.space_id, Space.bed_count, Access.start_time, Access.end_time FROM Hotel.Customer, Hotel.Space, Hotel.Access, Hotel.Charge WHERE Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id AND Customer.nfc_id=Charge.nfc_id AND Space.bed_count>0 AND Charge.service_id LIKE 'Rm%'";
 $result = mysqli_query($con,$sql);
 
 ?>
@@ -29,7 +29,6 @@ $result = mysqli_query($con,$sql);
         <th style="color:white;">Beds</th>
         <th style="color:white;">Access Start Time</th>
         <th style="color:white;">Access End Time</th>
-        <th style="color:white;">Room Cost</th>
     </tr>
     <?php
     while($row=mysqli_fetch_assoc($result)){
@@ -46,7 +45,6 @@ $result = mysqli_query($con,$sql);
             <td style="color:white;"><?php echo $row["bed_count"]; ?></td>
             <td style="color:white;"><?php echo $row["start_time"]; ?></td>
             <td style="color:white;"><?php echo $row["end_time"]; ?></td>
-            <td style="color:white;"><?php echo $row["ammount"]; ?></td>
         </tr>
         <?php
     }
