@@ -41,8 +41,8 @@ echo "<div style ='color:white'>The following results were found:</div>";
 ?>
 
 <br>
-<table border="2" align="left" cellpadding="5" cellspacing="5">
-    <caption style="text-align:left">Subscription Services:</caption>
+<table border="2" align="center" cellpadding="5" cellspacing="5">
+    <caption style="center:left">Subscription Services:</caption>
     <tr>
         <th style="color:white;">Customer NFC ID </th>
         <th style="color:white;">First Name</th>
@@ -72,8 +72,8 @@ echo "<div style ='color:white'>The following results were found:</div>";
     }
     ?>
 <br>
-<table border="2" align="left" cellpadding="5" cellspacing="5">
-    <caption style="text-align:left;">Complimentary Services:</caption>
+<table border="2" align="center" cellpadding="5" cellspacing="5">
+    <caption style="center:left;">Complimentary Services:</caption>
     <tr>
         <th style="color:white;">Customer NFC ID </th>
         <th style="color:white;">First Name</th>
