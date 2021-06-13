@@ -27,22 +27,16 @@ $result = mysqli_query($con,$sql);
         <th style="color:white;">Bracelet ID</th>
         <th style="color:white;">First Name</th>
         <th style="color:white;">Last Name</th>
-        <th style="color:white;">ID Type</th>
-        <th style="color:white;">ID Number</th>
-        <th style="color:white;">ID Authority</th>
-        <th style="color:white;">Birthdate</th>
+        <th style="color:white;">Age</th>
         </tr>
         <?php
                 while($row=mysqli_fetch_assoc($result)){
                 ?>
                         <tr>
-                                <td style="color:white;"><?php echo $row["nfc_id"]; ?></td>
-                                <td style="color:white;"><?php echo $row["first_name"]; ?></td>
-                                <td style="color:white;"><?php echo $row["last_name"]; ?></td>
-                                <td style="color:white;"><?php echo $row["id_type"]; ?></td>
-                                <td style="color:white;"><?php echo $row["id_num"]; ?></td>
-                                <td style="color:white;"><?php echo $row["id_auth"]; ?></td>
-                                <td style="color:white;"><?php echo $row["birthdate"]; ?></td>
+                        <td style="color:white;"><?php echo $row["nfc_id"]; ?></td>
+                        <td style="color:white;"><?php echo $row["first_name"]; ?></td>
+                        <td style="color:white;"><?php echo $row["last_name"]; ?></td>
+                        <td style="color:white;"><?php echo $row["Age"]; ?></td>
                         </tr>
                 <?php
                 }

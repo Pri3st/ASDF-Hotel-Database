@@ -28,7 +28,7 @@ SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Visit.space_id,
 
 8) Covid-19 Tracking Query - Find Information about the Hotel Spaces a Customer has Access Customers
 
-SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Access.space_id, Access.start_time, Access.end_time, Space.space_descr FROM Customer, Access, Space WHERE Customer.nfc_id = '$search1' AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id";
+SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Access.space_id, Access.start_time, Access.end_time, Space.space_descr FROM Customer, Access, Space WHERE Customer.nfc_id = '$search1' AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id;
 
 9) Services by Type View
 
@@ -36,12 +36,20 @@ CREATE VIEW ServicesbyTypeView AS SELECT Customer.first_name, Customer.last_name
 
 10) Services by Type View Query
 
-"SELECT ServicesbyTypeView.nfc_id, ServicesbyTypeView.first_name, ServicesbyTypeView.last_name FROM ServicesbyTypeView WHERE ServicesbyTypeView.service_id='$search1'";
+SELECT ServicesbyTypeView.nfc_id, ServicesbyTypeView.first_name, ServicesbyTypeView.last_name FROM ServicesbyTypeView WHERE ServicesbyTypeView.service_id='$search1';
 
 11) Customers Profiles View
 
-CREATE VIEW CustomerView AS SELECT nfc_id, first_name, last_name, id_type, id_num, id_auth, birthdate FROM Customer;
+CREATE VIEW Customer.View AS SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, TIMESTAMPDIFF(YEAR, Customer.birthdate, CURDATE()) AS Age FROM Customer;
 
 12) Customers Profiles View Query
 
 SELECT * from CustomerView;
+
+13) Calculate Customers Ages
+
+SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, TIMESTAMPDIFF(YEAR, Customer.birthdate, CURDATE()) AS Age FROM Customer;
+
+14) Find most Visited space_descr
+
+SELECT space_id, COUNT(space_id) AS Freq FROM Visit GROUP BY space_id ORDER BY Freq DESC LIMIT 2;
