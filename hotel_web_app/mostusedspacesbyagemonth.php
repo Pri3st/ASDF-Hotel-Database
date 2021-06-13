@@ -15,7 +15,7 @@
 <a href="queriesgeneral.html" class="button">Back</a>
 <center><h2 style = "color:white;">Most Used Spaces by Customer Age Category</h2></center>
 <center><h3 style = "color:white;">Please Insert one of the following numbers corresponding to the respective age category.</h3></center>
-<form action = "displaymostusedspacesbyage.php" method="get">
+<form action = "displaymostusedspacesbyagemonth.php" method="get">
         <br>
         <center style="color:white;">Age Category:
             <input type="text" name="search1" size="48">
