@@ -6,6 +6,8 @@
                 <link rel="stylesheet" type="text/css" href="button.css">
         </head>
 <center><h2 style="color:white;">Most used Spaces by Age Category</h2></center>
+<center><h4 style="color:white;">"Number of Distinct Visits" Column shows all the distinct visits that have been made to that specific Hotel Space, even if they have been made by the same Customer.</h4></center>
+<center><h4 style="color:white;">Multiple visits made to a Hotel Space by the same Customer count to the query result.</h4></center>
 <br>
 
 <?php
@@ -19,7 +21,7 @@ if ($search1!=1 && $search1!=2 && $search1!=3){
 
 else if ($search1==1){ //cache
 
-$query0 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space WHERE Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
+$query0 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age<41 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
 
 $result0 = mysqli_query($con,$query0);
 
@@ -34,7 +36,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 <tr>
 <table border="2" align="center" cellpadding="5" cellspacing="5">
 <th style="color:white;">Space ID</th>
-<th style="color:white;">Different Customer Visits</th>
+<th style="color:white;">Number of Distinct Visits</th>
 <th style="color:white;">Space Name</th>
 <th style="color:white;">Space Description</th>
 <tr/>
@@ -55,7 +57,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 
 else if ($search1==2){ //cache
 
-$query1 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space WHERE Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
+$query1 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age>40 AND CustomerView.Age<60 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
 
 $result1 = mysqli_query($con,$query1);
 
@@ -70,7 +72,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 <tr>
 <table border="2" align="center" cellpadding="5" cellspacing="5">
 <th style="color:white;">Space ID</th>
-<th style="color:white;">Different Customer Visits</th>
+<th style="color:white;">Number of Distinct Visits</th>
 <th style="color:white;">Space Name</th>
 <th style="color:white;">Space Description</th>
 <tr/>
@@ -91,7 +93,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 
 else if ($search1==3){ //cache
 
-$query2 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space WHERE Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
+$query2 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age>60 AND CustomerView.Age<60 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
 
 $result2 = mysqli_query($con,$query2);
 
@@ -106,7 +108,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 <tr>
 <table border="2" align="center" cellpadding="5" cellspacing="5">
 <th style="color:white;">Space ID</th>
-<th style="color:white;">Different Customer Visits</th>
+<th style="color:white;">Number of Distinct Visits</th>
 <th style="color:white;">Space Name</th>
 <th style="color:white;">Space Description</th>
 <tr/>
