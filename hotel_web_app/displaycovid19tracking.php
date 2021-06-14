@@ -11,7 +11,7 @@
   </style>
     <link rel="stylesheet" type="text/css" href="button.css">
 </head>
-<center><h2 style="color:white;">Customer COVID-19 Tracking Results</h2></center>
+<center><h2 style="color:white;">COVID-19 Tracking Results for Customer with NFC ID <?php echo $_GET["search1"]; ?></h2></center>
 <br>
 
 <?php

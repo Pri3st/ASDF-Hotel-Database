@@ -5,7 +5,7 @@
         <head>
                 <link rel="stylesheet" type="text/css" href="button.css">
         </head>
-<center><h2 style="color:white;">Customers Who Received the Service</h2></center>
+<center><h2 style="color:white;">Customers Who Received the Service </h2></center>
 <br>
 
 <?php

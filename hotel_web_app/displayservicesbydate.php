@@ -5,7 +5,7 @@
                 <link rel="stylesheet" type="text/css" href="button.css">
         </head>
 <a href="servicesbydate.php" class="button">Back</a>        
-<center><h2 style="color:white;">Services Provided at a Specific Date</h2></center>
+<center><h2 style="color:white;">Hotel Services Provided to Customers at <?php echo $_GET["search1"]; ?></h2></center>
 <br>
 
 <?php

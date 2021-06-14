@@ -11,7 +11,7 @@
   </style>
     <link rel="stylesheet" type="text/css" href="button.css">
 </head>
-<center><h2 style="color:white;">Results for Given Cost</h2></center>
+<center><h2 style="color:white;">Results for Services that Cost <?php echo $_GET["search1"]; ?>€</h2></center>
 <br>
 
 <?php

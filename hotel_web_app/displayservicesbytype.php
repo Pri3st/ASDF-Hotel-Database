@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="button.css">
 </head>
-<center><h2 style="color:white;">Services By Type</h2></center>
+<center><h2 style="color:white;">Customer who used Service <?php echo $_GET["search1"]; ?></h2></center>
 <br>
 
 <?php

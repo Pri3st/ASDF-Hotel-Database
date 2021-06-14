@@ -1,4 +1,4 @@
-<a href="index.html" class="button">Back</a>
+<a href="index.html" class="button">Back</a><br>
 
 <?php
 //Establishing connection with the database
