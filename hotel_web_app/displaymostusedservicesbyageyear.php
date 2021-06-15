@@ -21,7 +21,7 @@ if ($search1!=1 && $search1!=2 && $search1!=3){
 
 else if ($search1==1){ //cache
 
-$query0 = "SELECT Service.service_id, COUNT(Service.service_id) AS Freq, Service.service_descr FROM Receive, Service, CustomerView WHERE CAST(Receive.charge_time as DATE)>'2019-12-30' AND Receive.nfc_id=CustomerView.nfc_id AND CustomerView.Age<41 AND Receive.service_id=Service.service_id AND Receive.service_id!='Rm2' AND Receive.service_id!='Rm4' GROUP BY Receive.service_id ORDER BY Freq DESC LIMIT 2";
+$query0 = "SELECT Service.service_id, COUNT(Service.service_id) AS Freq, Service.service_descr FROM Receive, Service, CustomerView WHERE CAST(Receive.charge_time as DATE)>'2019-12-30' AND Receive.nfc_id=CustomerView.nfc_id AND CustomerView.Age<41 AND Receive.service_id=Service.service_id AND Receive.service_id!='Rm2' AND Receive.service_id!='Rm4' GROUP BY Receive.service_id ORDER BY Freq DESC";
 
 $result0 = mysqli_query($con,$query0);
 
@@ -55,7 +55,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 
 else if ($search1==2){ //cache
 
-$query1 = "SELECT Service.service_id, COUNT(Service.service_id) AS Freq, Service.service_descr FROM Receive, Service, CustomerView WHERE CAST(Receive.charge_time as DATE)>'2019-12-30' AND Receive.nfc_id=CustomerView.nfc_id AND CustomerView.Age>40 AND CustomerView.Age<61 AND Receive.service_id=Service.service_id AND Receive.service_id!='Rm4' AND Receive.service_id!='Rm2' GROUP BY Receive.service_id ORDER BY Freq DESC LIMIT 2";
+$query1 = "SELECT Service.service_id, COUNT(Service.service_id) AS Freq, Service.service_descr FROM Receive, Service, CustomerView WHERE CAST(Receive.charge_time as DATE)>'2019-12-30' AND Receive.nfc_id=CustomerView.nfc_id AND CustomerView.Age>40 AND CustomerView.Age<61 AND Receive.service_id=Service.service_id AND Receive.service_id!='Rm4' AND Receive.service_id!='Rm2' GROUP BY Receive.service_id ORDER BY Freq DESC";
 
 $result1 = mysqli_query($con,$query1);
 
@@ -89,7 +89,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 
 else if ($search1==3){ //cache
 
-$query2 = "SELECT Service.service_id, COUNT(Service.service_id) AS Freq, Service.service_descr FROM Receive, Service, CustomerView WHERE CAST(Receive.charge_time as DATE)>'2019-12-30' AND Receive.nfc_id=CustomerView.nfc_id AND CustomerView.Age>60 AND Receive.service_id=Service.service_id AND Receive.service_id!='Rm2' AND Receive.service_id!='Rm4' GROUP BY Receive.service_id ORDER BY Freq DESC LIMIT 2";
+$query2 = "SELECT Service.service_id, COUNT(Service.service_id) AS Freq, Service.service_descr FROM Receive, Service, CustomerView WHERE CAST(Receive.charge_time as DATE)>'2019-12-30' AND Receive.nfc_id=CustomerView.nfc_id AND CustomerView.Age>60 AND Receive.service_id=Service.service_id AND Receive.service_id!='Rm2' AND Receive.service_id!='Rm4' GROUP BY Receive.service_id ORDER BY Freq DESC";
 $result2 = mysqli_query($con,$query2);
 
 if(!$result2 ||  mysqli_num_rows($result2)==0 ) {
