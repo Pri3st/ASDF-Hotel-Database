@@ -21,7 +21,7 @@ if ($search1!=1 && $search1!=2 && $search1!=3){
 
 else if ($search1==1){ //cache
 
-$query0 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE CAST(Visit.entry_time as DATE) AND 'DATE'>'2021-05-31' AND Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age<41 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
+$query0 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE CAST(Visit.exit_time as DATE) AND DATE>'2021-05-31' AND Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age<41 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
 
 $result0 = mysqli_query($con,$query0);
 
@@ -57,7 +57,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 
 else if ($search1==2){ //cache
 
-$query1 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE CAST(Visit.entry_time as DATE) AND 'DATE'>'2021-05-31' AND Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age>40 AND CustomerView.Age<60 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
+$query1 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE CAST(Visit.exit_time as DATE) AND DATE>'2021-05-31' AND Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age>40 AND CustomerView.Age<60 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
 
 $result1 = mysqli_query($con,$query1);
 
@@ -93,7 +93,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 
 else if ($search1==3){ //cache
 
-$query2 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE CAST(Visit.entry_time as DATE) AND 'DATE'>'2021-05-31' AND Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age>60 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
+$query2 = "SELECT Space.space_id, COUNT(Visit.space_id) AS Freq, Space.space_name, Space.space_descr FROM Visit, Space, CustomerView WHERE CAST(Visit.exit_time as DATE) AND DATE>'2021-05-31' AND Visit.nfc_id=CustomerView.nfc_id AND CustomerView.Age>60 AND Visit.space_id=Space.space_id GROUP BY Visit.space_id ORDER BY Freq DESC LIMIT 2";
 
 $result2 = mysqli_query($con,$query2);
 
