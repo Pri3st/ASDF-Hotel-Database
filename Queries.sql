@@ -32,7 +32,7 @@ SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Access.space_id
 
 9) Services by Type View
 
-CREATE VIEW ServicesbyTypeView AS SELECT Customer.first_name, Customer.last_name, Customer.nfc_id, Service.service_descr, Service.service_id FROM Customer, Service, Receive WHERE Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id;
+CREATE VIEW ServicesbyTypeView AS SELECT Customer.nfc_id, Service.service_descr FROM Customer, Service, Receive WHERE Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id;
 
 10) Services by Type View Query
 

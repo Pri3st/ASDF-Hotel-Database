@@ -5,7 +5,7 @@
         <head>
                 <link rel="stylesheet" type="text/css" href="button.css">
         </head>
-<center><h2 style="color:white;">Customers Who Received the Service </h2></center>
+<center><h2 style="color:white;">Customers Who Received the Service</h2></center>
 <br>
 
 <?php
@@ -13,7 +13,7 @@ include("DBConnection.php");
 session_start();
 $search1 = $_REQUEST["search1"];
 
-$query = "SELECT ServicesbyTypeView.nfc_id, ServicesbyTypeView.first_name, ServicesbyTypeView.last_name
+$query = "SELECT ServicesbyTypeView.nfc_id, ServicesbyTypeView.service_descr, ServicesbyTypeView.service_id
           FROM ServicesbyTypeView
           WHERE ServicesbyTypeView.service_id='$search1'";
 
@@ -32,8 +32,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
 <tr>
 <table border="2" align="center" cellpadding="5" cellspacing="5">
 <th style="color:white;">NFC ID</th>
-<th style="color:white;">First Name</th>
-<th style="color:white;">Last Name</th>
+<th style="color:white;">Service Description</th>
 <tr/>
 
 <?php
@@ -41,8 +40,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
         ?>
                 <tr>
                 <td style="color:white;"><?php echo $row["nfc_id"];?> </td>
-                <td style="color:white;"><?php echo $row["first_name"];?> </td>
-                <td style="color:white;"><?php echo $row["last_name"];?> </td>
+                <td style="color:white;"><?php echo $row["service_descr"];?> </td>
                 </tr>
         <?php
         }
