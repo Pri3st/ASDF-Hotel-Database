@@ -7,7 +7,7 @@
         </head>
 <center><h2 style="color:white;">Most used Spaces by Selected Age Category This Month</h2></center>
 <center><h4 style="color:white;">"Number of Distinct Visits" Column shows all the distinct visits that have been made to that specific Hotel Space, even if they have been made by the same Customer.</h4></center>
-<center><h4 style="color:white;">Multiple visits made to a Hotel Space by the same Customer count to the query result.</h4></center>
+<center><h4 style="color:white;">Multiple visits made to a Hotel Space by the same Customer counts to the query result.</h4></center>
 <br>
 
 <?php
