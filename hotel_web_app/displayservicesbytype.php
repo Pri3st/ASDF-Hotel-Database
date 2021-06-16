@@ -13,11 +13,11 @@ include("DBConnection.php");
 session_start();
 $search1 = $_REQUEST["search1"];
 
-$query = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Space.space_id, Space.space_name
+$query = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Space.space_id, Space.space_name, Receive.charge_time
           FROM Customer, Service, Receive, Space, Visit, Provided
-          WHERE Service.service_id = '$search1' AND Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id AND Customer.nfc_id=Visit.nfc_id AND Visit.space_id=Space.space_id AND Service.service_id=Provided.service_id AND Provided.space_id=Space.space_id 
+          WHERE CAST(Visit.exit_time as DATE)=CAST(Receive.charge_time as DATE) AND Service.service_id = '$search1' AND Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id AND Customer.nfc_id=Visit.nfc_id AND Visit.space_id=Space.space_id AND Service.service_id=Provided.service_id AND Provided.space_id=Space.space_id
           UNION ALL 
-          SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Space.space_id, Space.space_name
+          SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Space.space_id, Space.space_name, Receive.charge_time
           FROM Customer, Service, Receive, Space, Access, Provided
           WHERE Service.service_id = '$search1' AND Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id AND Service.service_id=Provided.service_id AND Provided.space_id=Space.space_id";
 
@@ -42,6 +42,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
         <th style="color:white;">Last Name</th>
         <th style="color:white;">Space ID</th>
         <th style="color:white;">Space Name</th>
+        <th style="color:white;">Used at</th>
     </tr>
     <?php
     while($row=mysqli_fetch_assoc($result)){
@@ -52,6 +53,7 @@ echo "<div style ='color:white'>The following results were found:</div>";
             <td style="color:white;"><?php echo $row["last_name"]; ?></td>
             <td style="color:white;"><?php echo $row["space_id"]; ?></td>
             <td style="color:white;"><?php echo $row["space_name"]; ?></td>
+            <td style="color:white;"><?php echo $row["charge_time"]; ?></td>
         </tr>
         <?php
         }
