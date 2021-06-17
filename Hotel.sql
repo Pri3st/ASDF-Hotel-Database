@@ -910,9 +910,9 @@ ALTER TABLE `Provided`
 -- Constraints for table `Receive`
 --
 ALTER TABLE `Receive`
-  ADD CONSTRAINT `Receive_ibfk_2` FOREIGN KEY (`nfc_id`) REFERENCES `Customer` (`nfc_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Receive_ibfk_3` FOREIGN KEY (`service_id`) REFERENCES `Service` (`service_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Receive_ibfk_4` FOREIGN KEY (`charge_time`) REFERENCES `Charge` (`charge_time`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Receive_ibfk_2` FOREIGN KEY (`nfc_id`) REFERENCES `Customer` (`nfc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `Receive_ibfk_3` FOREIGN KEY (`service_id`) REFERENCES `Service` (`service_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `Receive_ibfk_4` FOREIGN KEY (`charge_time`) REFERENCES `Charge` (`charge_time`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Subscribe`
