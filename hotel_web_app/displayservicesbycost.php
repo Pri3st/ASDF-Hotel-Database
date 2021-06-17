@@ -32,7 +32,7 @@ $result2 = mysqli_query($con,$query2);
 if ($search1 < 0){
         echo "<div style ='color:white'>Wrong Input</div>";
 }
-else if(!$result1 || mysqli_num_rows($result1)==0) {
+else if((!$result1 || mysqli_num_rows($result1)==0) && (!$result2 || mysqli_num_rows($result2)==0)) {
         echo "<div style ='color:white'>No results were found</div>";
 }
 else

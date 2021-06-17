@@ -24,7 +24,7 @@ $query = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Space
 $result = mysqli_query($con,$query);
 
 if ($search1 != 'B1' && $search1 != 'B2' && $search1 != 'R1' && $search1 != 'R2' && $search1 != 'R3' && $search1 != 'R4' && $search1 != 'G1' && $search1 != 'G2' && $search1 != 'G3' && $search1 != 'G4' && $search1 != 'H1' && $search1 != 'H2' && $search1 != 'H3'  && $search1 != 'Rm2' && $search1 != 'Rm4' && $search1 != 'R4' && $search1 != 'S1' && $search1 != 'S2' && $search1 != 'S3' && $search1 != 'W1' && $search1 != 'W2' && $search1 != 'W3'){
-        echo "<div style ='color:white'> Λάθος είσοδος!</div>";
+        echo "<div style ='color:white'>Wrong Input</div>";
 }
 else if(!$result ||  mysqli_num_rows($result)==0 ) {
         echo "<div style ='color:white'>No results were found</div>";

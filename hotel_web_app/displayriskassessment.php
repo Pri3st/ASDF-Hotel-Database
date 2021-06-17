@@ -25,6 +25,16 @@ $search1 = $_REQUEST["search1"];
 $query1 = "SELECT DISTINCT nfc_id from Visit, (SELECT space_id, entry_time, exit_time FROM Visit WHERE nfc_id='$search1') AS positive WHERE (Visit.entry_time<addtime(positive.exit_time, '01:00:00') AND Visit.exit_time>positive.entry_time) AND Visit.space_id=positive.space_id AND nfc_id!='$search1'";
 
 $result1 = mysqli_query($con,$query1);
+
+if ($search1<1 || $search1>20){
+        echo "<div style ='color:white'>Wrong Input</div>";
+}
+else if(!$result1 || mysqli_num_rows($result1)==0) {
+        echo "<div style ='color:white'>No results were found</div>";
+}
+else
+{
+echo "<div style ='color:white'>The following results were found:</div>";
 ?>
 
 <br>
@@ -41,7 +51,8 @@ $result1 = mysqli_query($con,$query1);
         </tr>
         <?php
     }
-    ?>
+}
+?>
 
 </body>
 </html>

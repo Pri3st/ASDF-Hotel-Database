@@ -25,8 +25,19 @@ $query1 = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Visi
 $query2 = "SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, Access.space_id, Access.start_time, Access.end_time, Space.space_descr
           FROM Customer, Access, Space
           WHERE Customer.nfc_id = '$search1' AND Customer.nfc_id=Access.nfc_id AND Access.space_id=Space.space_id";
+
 $result1 = mysqli_query($con,$query1);
 $result2 = mysqli_query($con,$query2);
+
+if ($search1<=0 || $search1>20){
+        echo "<div style ='color:white'>Wrong Input</div>";
+}
+else if((!$result1 || mysqli_num_rows($result1)==0) && (!$result2 || mysqli_num_rows($result2)==0)) {
+        echo "<div style ='color:white'>No results were found</div>";
+}
+else
+{
+echo "<div style ='color:white'>The following results were found:</div>";
 ?>
 
 <br>
@@ -81,8 +92,9 @@ $result2 = mysqli_query($con,$query2);
             <td style="color:white;"><?php echo $row["end_time"]; ?></td>
         </tr>
         <?php
-    }
-    ?>
+        }
+}
+?>
 </body>
 </html>
 
