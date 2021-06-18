@@ -11,7 +11,7 @@ An NFC-enabled bracelet is delivered to each customer, which provides the user w
 # ER Diagram
 ![](images/ER_Diagram.png)
 
-# ER Schema
+# Relational Model
 ![](images/ER_Schema.png)
 
 
