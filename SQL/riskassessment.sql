@@ -1,0 +1,1 @@
+SELECT DISTINCT nfc_id from Visit, (SELECT space_id, entry_time, exit_time FROM Visit WHERE nfc_id='$search1') AS positive WHERE (Visit.entry_time<addtime(positive.exit_time, '01:00:00') AND Visit.exit_time>positive.entry_time) AND Visit.space_id=positive.space_id AND nfc_id!='$search1';

@@ -1,0 +1,1 @@
+CREATE VIEW Customer.View AS SELECT Customer.nfc_id, Customer.first_name, Customer.last_name, TIMESTAMPDIFF(YEAR, Customer.birthdate, CURDATE()) AS Age FROM Customer;

@@ -1,0 +1,1 @@
+SELECT ServicesbyTypeView.nfc_id, ServicesbyTypeView.service_descr, ServicesbyTypeView.service_id FROM ServicesbyTypeView WHERE ServicesbyTypeView.service_id='$search1';

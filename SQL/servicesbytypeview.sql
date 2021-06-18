@@ -1,0 +1,1 @@
+CREATE VIEW ServicesbyTypeView AS SELECT Customer.nfc_id, Service.service_descr FROM Customer, Service, Receive WHERE Customer.nfc_id=Receive.nfc_id AND Receive.service_id=Service.service_id;
