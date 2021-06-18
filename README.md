@@ -9,7 +9,7 @@ A large hotel unit, ASDF Palace, provides hospitality services, managing rooms a
 An NFC-enabled bracelet is delivered to each customer, which provides the user with a unique identity that will serve as a key to all spaces, rooms and services that he wishes to enjoy. The bracelet is the only way for every customer to enter and exit his/her room, as well as to access any area of interest in the hotel, such as lifts, treadmills, restaurants, leisure facilities, bars, work rooms or meeting rooms, gyms, saunas and hair salons as well as the use of services provided in these spaces. The trace of each customer at the entrance and exit from a hotel area is recorded in an information system. At the same time, every time a customer wishes to use a service, the bracelet is read by reader and the corresponding charges are made directly on the customer's tab.
 
 # ER Diagram
-![Screenshot](ER Schema.png)
+!(ER Schema.png)
 
 
 ## Project Installation and Deployment Guide (Linux)
